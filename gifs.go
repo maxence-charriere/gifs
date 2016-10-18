@@ -1,3 +1,4 @@
+// Package gifs is a package to interact with Gifs.com API.
 package gifs
 
 var (
