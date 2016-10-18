@@ -38,7 +38,7 @@ func TestImportError(t *testing.T) {
 	p := ImportPayload{}
 
 	if r, err = Import(p); err == nil {
-		t.Fatal("sould error")
+		t.Fatal("should error")
 	}
 
 	t.Logf("response: %+v", r)
