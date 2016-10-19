@@ -69,11 +69,13 @@ func Import(p ImportPayload) (response Response, err error) {
 	defer res.Body.Close()
 
 	d := json.NewDecoder(res.Body)
-	d.Decode(&response)
+
+	if err = d.Decode(&response); err != nil {
+		return
+	}
 
 	if res.StatusCode != 200 {
-		err = errors.New(response.Errors.Message)
-		return
+		err = errors.New(response.errors.Message)
 	}
 
 	return

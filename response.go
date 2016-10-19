@@ -3,7 +3,7 @@ package gifs
 // Response represents a response from the Gifs API
 type Response struct {
 	Success Success `json:"success"`
-	Errors  Errors  `json:"errors"`
+	errors  Errors
 }
 
 // Success represents a response success data.
@@ -28,6 +28,7 @@ type Meta struct {
 	Duration string `json:"duration"`
 	Height   int    `json:"height"`
 	Width    int    `json:"width"`
+	Frames   int    `json:"frames"`
 }
 
 // Errors represents a response errors data.
